@@ -1,0 +1,32 @@
+CREATE TABLE opportunity (
+	deliveryinstallationstatus__c varchar(255) NULL,
+	expectedrevenue float8 NULL,
+	forecastcategoryname varchar(255) NULL,
+	closedate date NULL,
+	accountid varchar(18) NULL,
+	stagename varchar(255) NULL,
+	currentgenerators__c varchar(100) NULL,
+	campaignid varchar(18) NULL,
+	"name" varchar(120) NULL,
+	iswon bool NULL,
+	fiscalquarter int4 NULL,
+	isdeleted bool NULL,
+	systemmodstamp timestamp NULL,
+	lastactivitydate date NULL,
+	hasopenactivity bool NULL,
+	probability float8 NULL,
+	createddate timestamp NULL,
+	leadsource varchar(255) NULL,
+	amount float8 NULL,
+	forecastcategory varchar(255) NULL,
+	fiscalyear int4 NULL,
+	description text NULL,
+	fiscal varchar(6) NULL,
+	sfid varchar(18) NULL COLLATE "ucs_basic",
+	id serial4 NOT NULL,
+	"_hc_lastop" varchar(32) NULL,
+	"_hc_err" text NULL,
+	CONSTRAINT opportunity_pkey PRIMARY KEY (id)
+);
+CREATE INDEX hc_idx_opportunity_systemmodstamp ON salesforce.opportunity USING btree (systemmodstamp);
+CREATE UNIQUE INDEX hcu_idx_opportunity_sfid ON salesforce.opportunity USING btree (sfid);
